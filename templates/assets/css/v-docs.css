@@ -459,7 +459,6 @@ article .container .content {
   }
 }
 article .container .content .content-container {
-  margin: 0 40px;
   max-width: 800px;
 }
 article .container .content footer {
@@ -628,6 +627,7 @@ article .vdocs-code-header {
 
   font: 300 16px/1.5 "FiraSans", Helvetica, Arial, sans-serif;
   color: var(--text-color);
+  padding: 0 40px;
 }
 .v-doc h1 {
   font-size: 35px;
@@ -813,24 +813,24 @@ article .vdocs-code-header {
 .v-code-example-header {
   display: flex;
   flex-direction: row;
-  padding: 3px 3px;
-  background-color: rgba(0,0,0, 0.1);
+  align-items: center;
+  padding: 6px 6px;
   justify-content: flex-start;
 }
-.v-code-example-results {
-  display: none;
-}
+
 
 .v-code-btn {
   display: flex;
   flex-direction: row;
-  padding: 3px 3px;
+  align-items: center;
+  padding: 6px 6px;
   border: 1px solid transparent;
   border-radius: 3px 3px;
 
 
-  height: 24px;
-  width: 24px;
+  min-height: 24px;
+  min-width: 24px;
+  cursor: pointer;
 }
 .v-code-btn:hover {
   border-color: var(--divider-color);
@@ -840,7 +840,15 @@ article .vdocs-code-header {
   margin-left: auto;
 }
 .v-code-btn-run {
-
+  padding: 3px 6px;
+  background-color: rgba(169,169,169,0.1);
+}
+.v-code-btn-run:hover {
+  background-color: rgba(169,169,169,0.3);
+  color: var(--theme-color);
+}
+.v-code-btn-run svg {
+  margin-right: 6px;
 }
 
 .v-code-example:not(.active-tab-results) .v-code-example-header .v-code-btn-show {

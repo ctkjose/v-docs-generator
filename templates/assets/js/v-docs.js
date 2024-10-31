@@ -269,7 +269,7 @@ vdocs.examples = {
 	init: function(){
 		CodeMirror.defineMode("v", vdocs_init_mode);
 
-		let items = document.querySelectorAll('.v-code-example.language-v');
+		let items = document.querySelectorAll('.language-v');
 
 		for(let el of items){
 			this.createEditor(el);
@@ -284,7 +284,7 @@ vdocs.examples = {
 		//Old codemirror docs https://marijnhaverbeke.nl/blog/codemirror-mode-system.html
 
 		const code  = el.textContent;
-
+		el.classList.add('v-code-example');
 		el.innerHTML = `<div class='v-code-example-header'>
 
 		<div class="v-code-btn-run v-code-btn" title="Try it in the V Playground..." role="button">
@@ -298,15 +298,7 @@ vdocs.examples = {
 				<rect width="16" height="16" fill="white"/>
 			  </clipPath>
 			</defs>
-		  </svg>
-		</div>
-		<div class="v-code-btn-show v-code-btn" title="Edit code..." role="button">
-			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="16px" height="16px" viewBox="-399.5 200.5 16 16" enable-background="new -399.5 200.5 16 16" xml:space="preserve">
-			<g>
-				<path fill="none" stroke="#5D87BF" stroke-linejoin="bevel" stroke-miterlimit="10" d="M-389.5,202.082h1.635   c1.328,0,1.865,1.174,1.865,2.503v1.043c0,1.329,0.882,2.407,2,2.407v0.031c-1.118-0.002-2,1.065-2,2.396v1.603   c0,1.328-0.537,2.019-1.865,2.019h-1.635"/>
-				<path fill="none" stroke="#5D87BF" stroke-linejoin="bevel" stroke-miterlimit="10" d="M-393.5,214.082h-1.135   c-1.328,0-2.365-0.689-2.365-2.018v-1.604c0-1.329,0-2.396-2-2.396v-0.03c2,0,2-1.078,2-2.407v-1.043   c0-1.329,1.037-2.503,2.365-2.503h1.135"/>
-			</g>
-			</svg>
+		  </svg> Try it...
 		</div>
 		<div class="v-code-btn-copy v-code-btn" title="Copy code..." role="button">
 			<svg height="16px" viewBox="0 0 24 24" width="16px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1">
@@ -326,12 +318,6 @@ vdocs.examples = {
 
 
 		this.items.push([el, editor]);
-
-		const terminal = document.createElement('div');
-		terminal.classList.add('v-code-example-results');
-		terminal.innerHTML = `<div class="v-docs-code-out"></div>`;
-
-		el.appendChild(terminal);
 
 		el.querySelector('.v-code-btn-run').addEventListener('click', (evt)=>{
 			//this.run(el, editor);
