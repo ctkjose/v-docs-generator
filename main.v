@@ -20,7 +20,7 @@ fn main() {
 	commit_res := os.execute_or_exit('git ls-remote -h https://github.com/vlang/v.git refs/heads/master')
 	latest_v_commit_hash := commit_res.output.all_before('\t')
 
-	//Removed need for sass, using
+	//Removed need for sass, using css variables
 	//update_sass()
 
 	mut ctx := Context{

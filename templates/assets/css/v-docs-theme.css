@@ -25,6 +25,8 @@
 .CodeMirror {
 	background-color: var(--code-background-color);
 	color: var(--code-text-color);
+	height: auto;
+	min-height: 1.5em;
 }
 
 .CodeMirror-line {

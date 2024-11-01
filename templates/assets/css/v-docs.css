@@ -801,7 +801,9 @@ article .vdocs-code-header {
 /*! V-CODE_EXAMPLE */
 
 .v-code-example {
-  --font-size: 12px
+  --font-size: 12px;
+  
+  overflow: hidden;
   max-width: 800px;
   margin-bottom: 30px;
   border: 1px solid var(--divider-color);
