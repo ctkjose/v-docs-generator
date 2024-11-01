@@ -18,10 +18,18 @@ This repo is located at [repo](https://github.com/ctkjose/v-docs-generator).<br>
 - Code snippets now present a "Try it..." button that takes users to https://play.vlang.io with the corresponding code.
 - Code snippets now have a "copy" button.
 
+## Search
+
+-- It works again! Fixed js code.
+-- CSS style got some minor tweaks.
+
+
 ## Javascript Refactoring
 
 -- All js code is now in a single file `v-docs.js`.
 -- The object `vdocs` is the namespace for all the functionality used. `vdocs.examples` handles all the code snippets. `vdocs.search` has all the search related code. `vdocs.ui` hydrates the UI and handles all UI interactions.
+
+
 
 ## Removed SASS
 
