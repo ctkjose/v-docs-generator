@@ -20,14 +20,15 @@ This repo is located at [repo](https://github.com/ctkjose/v-docs-generator).<br>
 
 ## Search
 
--- It works again! Fixed js code.
--- CSS style got some minor tweaks.
+- It works again! Fixed js code.
+- CSS style got some minor tweaks.
 
 
 ## Javascript Refactoring
 
--- All js code is now in a single file `v-docs.js`.
--- The object `vdocs` is the namespace for all the functionality used. `vdocs.examples` handles all the code snippets. `vdocs.search` has all the search related code. `vdocs.ui` hydrates the UI and handles all UI interactions.
+- All js code is now in a single file `v-docs.js`.
+- The object `vdocs` is the namespace for all the functionality used. `vdocs.examples` handles all the code snippets. `vdocs.search` has all the search related code. `vdocs.ui` hydrates the UI and handles all UI interactions.
+- Code cleanup and refactoring.
 
 
 
