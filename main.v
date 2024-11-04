@@ -40,12 +40,18 @@ mut:
 }
 
 fn (mut ctx Context) write_mapping() ! {
-	content := '
-	const vDocsCache = { titles_to_fnames: ${json.encode_pretty(ctx.titles_to_fnames)},
-	fnames: ${json.encode_pretty(ctx.pages)}
-	};
-	'
-	write_output_file('assets/js/v_docs_md_url_index.js', content)!
+	js_file_index := '
+// Lookups of sections to files
+vdocs.titles_to_fnames = ${json.encode_pretty(ctx.titles_to_fnames)};
+vdocs.fnames = ${json.encode_pretty(ctx.pages)};'
+	
+	js_src := os.read_file('templates/assets/js/v-docs.js') or {
+		eprintln('Failed to read file: $err')
+		return
+	}
+	
+	write_output_file('assets/js/v-docs.js', js_src + js_file_index)!
+	
 	eprintln('> Total titles: ${ctx.titles_to_fnames.len}')
 	eprintln('> HTML pages: ${ctx.pages.len}')
 }

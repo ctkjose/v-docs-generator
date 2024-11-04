@@ -2,7 +2,7 @@
 
 ![Screenshot](./screenshot.png)
 
-A refactor of the official V documentation [generator](https://github.com/vlang/docs/tree/generator).
+A [refactoring](Refactoring.md) of the official V documentation [generator](https://github.com/vlang/docs/tree/generator).
 
 ## External dependencies
 

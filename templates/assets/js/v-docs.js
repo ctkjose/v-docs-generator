@@ -132,19 +132,19 @@ vdocs.ui = {
 	},
 	helperGetLinkToSection: function(section){
 
-		const fixed_url = vDocsCache.titles_to_fnames[ section ];
+		const fixed_url = vdocs.titles_to_fnames[ section ];
 		if (fixed_url) { return fixed_url; }
 
-		const existing_html_page = vDocsCache.fnames[ section ];
+		const existing_html_page = vdocs.fnames[ section ];
 		if (existing_html_page) { return existing_html_page; }
 
 		// try with a simpler normalized version of the section title:
 		const slug = section.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
 
-		const sfixed_url = vDocsCache.titles_to_fnames[ slug ];
+		const sfixed_url = vdocs.titles_to_fnames[ slug ];
 		if (sfixed_url) { return sfixed_url; }
 
-		const sexisting_html_page = vDocsCache.fnames[ slug ];
+		const sexisting_html_page = vdocs.fnames[ slug ];
 		if (sexisting_html_page) { return sexisting_html_page; }
 
 		// probably a 3rd level or lower title, that currently has no reverse mapping; redirect to the main docs.md:
@@ -375,6 +375,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function vdocs_init_mode(config){
+	//Creates a CM5 Language Mode
+	//Deprecated, replaced with CM6 Language Mode in cm-lang-v.js
+	
 	//Keywords
 	var A = new Set([
 		"as", "asm", "assert", "atomic", "break", "const", "continue", "defer", "else", "enum", "fn", "for", "go", "goto", "if", "import", "in", "interface", "is", "isreftype", "lock", "match", "module", "mut", "none", "or", "pub", "return", "rlock", "select", "shared", "sizeof", "static", "struct", "spawn", "type", "typeof", "union", "unsafe", "volatile", "__global", "__offsetof",
